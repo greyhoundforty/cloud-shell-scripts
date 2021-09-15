@@ -3,7 +3,7 @@ Selection of shell scripts that make it easier to work in IBM Cloud Shell
 
 ## VPC 
 
- - list_vpc_subnets: Given $1 a VPC name, use jq to filter and return only the name and ID of the subnets. 
+ - list_vpc_subnets: Given $1 a VPC name, use jq to filter and return only the name and ID of the subnets.  
    Usage: `list_vpc_subnets NAME_OF_VPC`.
  - list_vpc_instances:  Given $1 a VPC name, use jq to filter and return only the name and ID of the instances. 
    Usage: `list_vpc_instances NAME_OF_VPC`.
