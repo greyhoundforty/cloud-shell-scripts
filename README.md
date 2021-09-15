@@ -5,13 +5,13 @@ Selection of shell scripts that make it easier to work in IBM Cloud Shell
 
  - list_vpc_subnets: Given $1 a VPC name, use jq to filter and return only the name and ID of the subnets.  
    Usage: `list_vpc_subnets NAME_OF_VPC`.
- - list_vpc_instances:  Given $1 a VPC name, use jq to filter and return only the name and ID of the instances. 
+ - list_vpc_instances:  Given $1 a VPC name, use jq to filter and return only the name and ID of the instances.   
    Usage: `list_vpc_instances NAME_OF_VPC`.
- - list_vpc_gws: Given $1 a VPC name, use jq to filter and return only the name and ID of the gateways.
+ - list_vpc_gws: Given $1 a VPC name, use jq to filter and return only the name and ID of the gateways.  
    Usage: `list_vpc_gws NAME_OF_VPC`
- - list_detached_volumes: Find all detached volumes in the given region across all resource groups. 
+ - list_detached_volumes: Find all detached volumes in the given region across all resource groups.  
    Usage: `list_detached_volumes`
- - list_bootable_snapshots: Find all bootable snapshot volumes in the given region across all resource groups. 
+ - list_bootable_snapshots: Find all bootable snapshot volumes in the given region across all resource groups.  
    Usage: `list_bootable_snapshots`
 
 ## IAM 
