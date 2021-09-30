@@ -44,10 +44,10 @@ function list_bootable_snapshots() {
 }
 
 #
-# get_rhel_images: Find all public RHEL images in the current region and return the name and ID of the image
-# Usage: get_rhel_images 
+# get_redhat_images: Find all public RHEL images in the current region and return the name and ID of the image
+# Usage: get_redhat_images 
 #
-function get_rhel_images() { 
+function get_redhat_images() { 
     ibmcloud is images --visibility public --json | jq -r '.[] | select(.status=="available") | select(.name | startswith("ibm-redhat-")) | .name, .id'
 }
 
@@ -57,4 +57,28 @@ function get_rhel_images() {
 #
 function get_ubuntu_images() { 
     ibmcloud is images --visibility public --json | jq -r '.[] | select(.status=="available") | select(.name | startswith("ibm-ubuntu-")) | .name, .id'
+}
+
+#
+# get_debian_images: Find all public Debian images in the current region and return the name and ID of the image
+# Usage: get_debian_images 
+#
+function get_debian_images() { 
+    ibmcloud is images --visibility public --json | jq -r '.[] | select(.status=="available") | select(.name | startswith("ibm-debian-")) | .name, .id'
+}
+
+#
+# get_centos_images: Find all public Centos images in the current region and return the name and ID of the image
+# Usage: get_centos_images 
+#
+function get_centos_images() { 
+    ibmcloud is images --visibility public --json | jq -r '.[] | select(.status=="available") | select(.name | startswith("ibm-centos-")) | .name, .id'
+}
+
+#
+# get_windows_images: Find all public Windows images in the current region and return the name and ID of the image
+# Usage: get_windows_images 
+#
+function get_windows_images() { 
+    ibmcloud is images --visibility public --json | jq -r '.[] | select(.status=="available") | select(.name | startswith("ibm-windows-")) | .name, .id'
 }
