@@ -43,3 +43,18 @@ function list_bootable_snapshots() {
     ibmcloud is snapshots --output json | jq -r '.[] | select(.bootable="true") | .name'
 }
 
+#
+# get_rhel_images: Find all public RHEL images in the current region and return the name and ID of the image
+# Usage: get_rhel_images 
+#
+function get_rhel_images() { 
+    ibmcloud is images --visibility public --json | jq -r '.[] | select(.status=="available") | select(.name | startswith("ibm-redhat-")) | .name, .id'
+}
+
+#
+# get_ubuntu_images: Find all public Ubuntu images in the current region and return the name and ID of the image
+# Usage: get_ubuntu_images 
+#
+function get_ubuntu_images() { 
+    ibmcloud is images --visibility public --json | jq -r '.[] | select(.status=="available") | select(.name | startswith("ibm-ubuntu-")) | .name, .id'
+}
